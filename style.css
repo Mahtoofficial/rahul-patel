@@ -1,0 +1,15 @@
+h1{
+    color: #eb3939;
+}
+.rahulpatel{
+    color:aquamarine;
+}
+#rahul{
+    color: blue;
+}
+*{
+    text-align: center;
+}
+h2[draggable=true]{
+    color: #eb3939;
+}
