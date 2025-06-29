@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modern One Page Site</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --main-gradient: linear-gradient(120deg, #4158D0 0%, #C850C0 50%, #FFCC70 100%);
+      --accent: #4158D0;
+      --bg: #f7f8fa;
+      --card-bg: #fff;
+      --shadow: 0 2px 18px rgba(100,80,220,.10);
+      --radius: 18px;
+    }
+    body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: var(--bg);
+      color: #23233b;
+    }
+    header {
+      background: var(--main-gradient);
+      color: #fff;
+      padding: 64px 0 90px 0;
+      text-align: center;
+      border-radius: 0 0 var(--radius) var(--radius);
+      box-shadow: var(--shadow);
+    }
+    header h1 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 2.7rem;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      font-weight: 500;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      background: transparent;
+      margin-top: -30px;
+      margin-bottom: 35px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      background: rgba(65,88,208,0.28);
+      padding: 10px 22px;
+      border-radius: 20px;
+      font-weight: 500;
+      letter-spacing: .5px;
+      transition: background .2s, color .2s;
+    }
+    nav a:hover, nav a.active {
+      background: #fff;
+      color: var(--accent);
+    }
+    section {
+      max-width: 1100px;
+      margin: 0 auto 48px auto;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 36px 24px;
+      margin-top: -45px;
+      position: relative;
+      z-index: 1;
+    }
+    .section-title {
+      color: var(--accent);
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      text-align: center;
+      letter-spacing: .7px;
+    }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+    }
+    .service-card {
+      background: linear-gradient(110deg, #fff 80%, #f7e1ff 100%);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      flex: 1 1 250px;
+      max-width: 300px;
+      min-width: 220px;
+      padding: 32px 18px;
+      text-align: center;
+      margin-bottom: 14px;
+      transition: transform .18s, box-shadow .18s;
+    }
+    .service-card:hover {
+      transform: translateY(-9px) scale(1.03);
+      box-shadow: 0 7px 30px rgba(65,88,208,.13);
+    }
+    .service-card i {
+      color: var(--accent);
+      font-size: 2.2rem;
+      margin-bottom: 18px;
+    }
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      justify-content: center;
+    }
+    .project-card {
+      background: #faf9ff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      flex: 1 1 220px;
+      max-width: 270px;
+      min-width: 180px;
+      margin-bottom: 14px;
+      overflow: hidden;
+      transition: transform .18s;
+    }
+    .project-card:hover {
+      transform: scale(1.04) rotate(-2deg);
+    }
+    .project-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .project-card .p-body {
+      padding: 16px;
+    }
+    .project-card h6 {
+      margin: 0;
+      font-size: 1.02rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+    }
+    .testimonial-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      flex: 1 1 320px;
+      max-width: 360px;
+      min-width: 210px;
+      padding: 28px 20px;
+      margin-bottom: 12px;
+      text-align: center;
+      font-style: italic;
+      position: relative;
+    }
+    .testimonial-card i {
+      color: var(--accent);
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+      opacity: .7;
+    }
+    .testimonial-card h6 {
+      margin: 15px 0 0 0;
+      font-style: normal;
+      color: #4158D0;
+      font-weight: 700;
+      letter-spacing: .2px;
+      font-size: 1rem;
+    }
+    .contact-form {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 14px;
+      border: 1.5px solid #e7e8ee;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #fafbfc;
+      transition: border .2s;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: none;
+      border: 1.5px solid var(--accent);
+      background: #fff;
+    }
+    .contact-form button {
+      background: var(--main-gradient);
+      color: #fff;
+      border: none;
+      padding: 12px 38px;
+      border-radius: 22px;
+      font-size: 1.1rem;
+      font-family: 'Manrope', Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: .5px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: background .2s, transform .15s;
+    }
+    .contact-form button:hover {
+      background: linear-gradient(120deg, #C850C0 0%, #4158D0 100%);
+      transform: translateY(-2px) scale(1.03);
+    }
+    .contact-info {
+      text-align: center;
+      margin-top: 22px;
+      color: #555;
+    }
+    .contact-info a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 9px;
+      font-size: 1.1rem;
+    }
+    footer {
+      text-align: center;
+      margin: 40px 0 16px 0;
+      color: #bbb;
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+    @media (max-width: 900px) {
+      section { padding: 20px 6px; }
+      .services, .testimonials, .projects-grid { flex-direction: column; align-items: center; }
+      nav { flex-wrap: wrap; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Web Editor Rahul Patel </h1>
+    <p>garib tha par sapne aasman chune ka dekha tha
+        .</p>
+    <nav>
+      <a href="#about" class="active">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#testimonials">lifesupporter</a>
+      <a href="#contact">Contact</a>
+      <a href="#My love">love</a>
+    </nav>
+  </header>
+  
+  <section id="about">
+    <div class="section-title">About Us</div>
+    <p style="text-align:center;max-width:600px;margin:0 auto 15px auto;">
+      Mera naam Rahul Kumar hai. Main ek saadharan parivaar se hoon, jahan zindagi ne hamesha kuch naya sikhaya hai. Mere pita ji ka naam Ranjit Mahto hai aur meri maa ka naam Koleshwari Devi hai – unhone hamesha har mushkil mein mujhe sambhala aur hausla diya. Aaj main jo kuch bhi hoon, usmein sabse bada yogdaan mere Vikash Mama ka hai. Unhone sirf mera haath nahi pakda, balki har mod par mera saath diya, chahe halat kitne bhi kathin kyun na rahe ho. Main unka hamesha aabhari rahunga.
+
+Mera sapna hai ki main zindagi mein aage badhkar apne parivaar ka naam roshan karun. Main maanti hoon ki sapne chahe jahan se bhi dekhe jayein, agar hausla ho toh unhe poora kiya ja sakta hai.
+    </p>
+  </section>
+  
+  <section id="services">
+    <div class="section-title">Our Services</div>
+    <div class="services">
+      <div class="service-card">
+        <i class="fa-solid fa-palette"></i>
+        <h4> graphic disigner</h4>
+        <p>hamara kuch bhaiya log graphicdesign karte hai unke karan hamare under bhi  karne ka joonoon aaya
+          .</p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-code"></i>
+        <h4>Web Development</h4>
+        <p>web developmentme mai abhi expert to nahi hu par bahut kuch abhi ham sikh raha hu.</p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-mobile-screen"></i>
+        <h4>App Development</h4>
+        <p>mai abhi aap development sikh raha hu uske baad mai  aap banana chalu kar dunga.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section id="projects">
+    <div class="section-title">Projects</div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Project 1">
+        <div class="p-body">
+          <h6>jee advance </h6>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Project 2">
+        <div class="p-body">
+          <h6> web designer</h6>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Project 3">
+        <div class="p-body">
+          <h6>traveler in nature</h6>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="testimonials">
+    <div class="section-title">life supporter</div>
+    <div class="testimonials">
+      <div class="testimonial-card">
+        <i class="fa-solid fa-quote-left"></i>
+        <p>"mujhe life sabse jayadaa aage badhne me sabse phala hath hamare papa ka hai mere papa ne mujhe padhne ke liye wah kolkata me jake  riskshaw chlaya karthe the or uske baad mujhe life me aage badhane ka kaam meri mami ka hai kioki  usne mujhe aage badhne ke liye usne papa se kai baar ladai bhi ki sirf mere liye"</p>
+        <h6>- Ranjit mahto</h6>
+      </div>
+      <div class="testimonial-card">
+        <i class="fa-solid fa-quote-left"></i>
+        <p>"hamare mamai papa ke baad bhi kuch log hamare jiwan me aaise haai jo haaame aage badhne me bahut madat kiye jaise hamare vikash mama ,arvind chacha or kai log hai hamare aage me sath diye hai ."</p>
+        <h6>- vikash and arvind</h6>
+      </div>
+    </div>
+  </section>
+  
+  <section id="contact">
+    <div class="section-title">Contact Us</div>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="contact-info">
+      <div><i class="fa-solid fa-envelope"></i> mahto.official6387@gmail.com</div>
+      <div><i class="fa-solid fa-phone"></i> 7542961128</div>
+      <div>
+        <a href="#"><i class="fab fa-facebook fa-lg"></i> https://www.instagram.com/rdx.rider213</a>
+        <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+        <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    &copy; 2025 ModernBiz Solutions. All rights reserved.
+  </footer>
+</body>
+</html>
